@@ -31,7 +31,7 @@ export const createMoves = () => {
     const knightMovesGraph = [];
 
     // Loop through each square on the chessboard
-    for (let row = 0; row <= 8; row++) {
+    for (let row = 0; row < 8; row++) {
         for (let col = 0; col < 8; col++) {
             // Loop through each possible knight move
             for (const move of knightMoves) {

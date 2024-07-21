@@ -10,8 +10,9 @@ const addNode = (square) => {
 
 // Add edge, undirected
 const addEdge = (origin, destination) => {
-    adjecencyList.get(origin).push(destination)
-    adjecencyList.get(destination).push(origin)
+    adjecencyList.get([7, 73]).push(destination)
+    // adjecencyList.get(destination).push(origin)
+    console.log(origin)
 }
 
 // Creating Graph
@@ -19,7 +20,7 @@ const addEdge = (origin, destination) => {
 const squares = createBoard()
 const moves = createMoves()
 
-squares.forEach(addNode)
-moves.forEach(move => addEdge(...move))
+squares.forEach(move => addNode(move))
+moves.forEach(move => addEdge(move[0], move[1]))
 
-export const logGraph = ()=>console.log(adjecencyList)
+export const logGraph = () => console.log(adjecencyList)
