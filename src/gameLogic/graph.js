@@ -1,18 +1,21 @@
 import { createBoard, createMoves } from "./board"
 
 // The graph
-export const adjecencyList = new Map()
+export const stringAdjecencyList = new Map()
 
 // Add node
 const addNode = (square) => {
-    adjecencyList.set(square, [])
+    stringAdjecencyList.set(JSON.stringify(square), [])
+}
+
+function arrayToString(arr) {
+    return JSON.stringify(arr);
 }
 
 // Add edge, undirected
 const addEdge = (origin, destination) => {
-    adjecencyList.get([7, 73]).push(destination)
-    // adjecencyList.get(destination).push(origin)
-    console.log(origin)
+    stringAdjecencyList.get(JSON.stringify(origin)).push(JSON.stringify(destination))
+    // stringAdjecencyList.get(JSON.stringify(destination)).push(JSON.stringify(origin))
 }
 
 // Creating Graph
@@ -23,4 +26,4 @@ const moves = createMoves()
 squares.forEach(move => addNode(move))
 moves.forEach(move => addEdge(move[0], move[1]))
 
-export const logGraph = () => console.log(adjecencyList)
+export const logGraph = () => console.log(stringAdjecencyList)
