@@ -1,6 +1,5 @@
-import { createBoard, createMoves } from "./gameLogic/board";
 import { logGraph } from "./gameLogic/graph";
+import { breathFirstSearch } from "./gameLogic/graphTraversal";
 
 logGraph()
-// console.log(createBoard())
-// console.log(createMoves())
+console.log(breathFirstSearch("[0,0]","[2,2]"))

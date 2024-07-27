@@ -8,10 +8,6 @@ const addNode = (square) => {
     stringAdjecencyList.set(JSON.stringify(square), [])
 }
 
-function arrayToString(arr) {
-    return JSON.stringify(arr);
-}
-
 // Add edge, undirected
 const addEdge = (origin, destination) => {
     stringAdjecencyList.get(JSON.stringify(origin)).push(JSON.stringify(destination))
